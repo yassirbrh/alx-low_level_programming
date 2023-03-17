@@ -1,7 +1,13 @@
-/*
- *This is The first C program !! EXCITED !!
- */
 #include <stdio.h>
+
+/*
+ * main- Entry point
+ *
+ * Description: Prints this string using the function puts
+ *
+ * Return: 0 (Success)
+ */
+
 int main(void)
 {
 
