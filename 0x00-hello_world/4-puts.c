@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * main- Entry point
  *
  * Description: Prints this string using the function puts
