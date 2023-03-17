@@ -1,6 +1,8 @@
 #include <stdio.h>
-
-int main(void) /*First Program in C with puts*/
+/*
+ *This is The first C program !! EXCITED !!
+ */
+int main(void) 
 {
 
 	puts("\"Programming is like building a multilingual puzzle");
