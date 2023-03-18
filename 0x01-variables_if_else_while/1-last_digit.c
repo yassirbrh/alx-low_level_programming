@@ -7,7 +7,7 @@
  *
  * Description: Prints the last digit of number
  *
- * Return : Always 0 (Success)
+ * Return : Always 0
 */
 int main(void)
 {
