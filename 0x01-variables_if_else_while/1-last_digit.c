@@ -7,7 +7,7 @@
  * Description: Prints the last digit of number
  *
  * Return : Always 0 (Success)
- */
+*/
 int main(void)
 {
 	int n, mod;
