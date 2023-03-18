@@ -6,11 +6,11 @@
  *
  * Description: Prints the last digit of number
  *
- * Return : (0) Success
+ * Return : 0 Success
  */
 int main(void)
 {
-	int n,mod;
+	int n, mod;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
