@@ -19,7 +19,7 @@ int main(void)
 
 	if (mod > 5)
 	{
-		printf("Last digit of %d is %d greater than 5\n", n, mod);
+		printf("Last digit of %d is and is %d greater than 5\n", n, mod);
 	}
 	else if (mod == 0)
 	{
