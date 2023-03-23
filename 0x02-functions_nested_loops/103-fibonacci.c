@@ -25,7 +25,6 @@ int main(void)
 		prv_fib1 = prv_fib2;
 		prv_fib2 = fib;
 	}
-	printf("%lu\n",sum);
-	putchar('\n');
+	printf("%lu\n", sum);
 	return (0);
 }
