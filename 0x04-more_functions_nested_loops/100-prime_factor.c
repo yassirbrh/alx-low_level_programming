@@ -9,7 +9,7 @@
 int main(void)
 {
 	unsigned long int i, n;
-	
+
 	i = 2;
 	n = 612852475143;
 	while (n > 1)
@@ -20,7 +20,7 @@ int main(void)
 			{
 				n = n / i;
 				if (n == 1)
-				printf("%lu",i);
+				printf("%lu", i);
 			}
 		}
 		i++;
