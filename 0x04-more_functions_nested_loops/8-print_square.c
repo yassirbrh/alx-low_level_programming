@@ -5,7 +5,7 @@
  * Description: Prints a square
  *
  * @size: the size of square
- * 
+ *
  * Return: No return because it's a void function
  */
 void print_square(int size)
