@@ -9,7 +9,7 @@
 int main(void)
 {
 	int i;
-	unsigned int fib, prv_fib1, prv_fib2;
+	unsigned long int fib, prv_fib1, prv_fib2;
 
 	prv_fib1 = 0;
 	prv_fib2 = 1;
