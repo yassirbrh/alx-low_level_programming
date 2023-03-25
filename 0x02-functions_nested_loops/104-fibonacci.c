@@ -17,9 +17,9 @@ int main(void)
 	{
 		fib = prv_fib1 + prv_fib2;
 		if (i == 97)
-		printf("%lu", fib);
+		printf("%llu", fib);
 		else
-		printf("%lu, ", fib);
+		printf("%llu, ", fib);
 		prv_fib1 = prv_fib2;
 		prv_fib2 = fib;
 	}
