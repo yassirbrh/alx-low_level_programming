@@ -16,7 +16,7 @@ int main(void)
 	for (i = 0; i < 98; i++)
 	{
 		fib = prv_fib1 + prv_fib2;
-		if (i == 49)
+		if (i == 97)
 		printf("%lu", fib);
 		else
 		printf("%lu, ", fib);
