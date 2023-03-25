@@ -11,15 +11,16 @@ int main(void)
 	int i;
 	unsigned long int fib, prv_fib1, prv_fib2;
 
-	prv_fib1 = 0;
-	prv_fib2 = 1;
-	for (i = 0; i < 98; i++)
+	prv_fib1 = 1;
+	prv_fib2 = 2;
+	printf("%lu, %lu, ", prv_fib1, prv_fib2);
+	for (i = 3; i <= 98; i++)
 	{
 		fib = prv_fib1 + prv_fib2;
 		if (i == 97)
-		printf("%u", fib);
+		printf("%lu", fib);
 		else
-		printf("%u, ", fib);
+		printf("%lu, ", fib);
 		prv_fib1 = prv_fib2;
 		prv_fib2 = fib;
 	}
