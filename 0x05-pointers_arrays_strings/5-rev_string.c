@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * rev_string - Function
  *
@@ -11,7 +12,7 @@
 void rev_string(char *s)
 {
 	int i, j;
-	char str[10];
+	char *str;
 
 	i = 0;
 	j = 0;
@@ -19,6 +20,7 @@ void rev_string(char *s)
 	{
 		i++;
 	}
+	str = malloc(sizeof(char) * i);
 	for (j = 0; j <= i; j++)
 	{
 		str[j] = *(s + j);
