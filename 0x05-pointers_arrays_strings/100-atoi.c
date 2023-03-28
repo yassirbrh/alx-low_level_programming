@@ -10,7 +10,7 @@
  */
 int _atoi(char *s)
 {
-	int integer, i, numOfMinus, j;
+	unsigned int integer, i, numOfMinus, j;
 
 	i = 0;
 	numOfMinus = 0;
