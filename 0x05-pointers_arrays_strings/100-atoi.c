@@ -30,9 +30,9 @@ int _atoi(char *s)
 			while (*(s + i) > 47 && *(s + i) < 58)
 			{
 				if (integer == 0)
-				integer += *(s + i) - 48;
+				integer += (int)*(s + i) - 48;
 				else
-				integer = (integer * 10) + *(s + i) - 48;
+				integer = (integer * 10) + (int)*(s + i) - 48;
 				i++;
 			}
 			break;
