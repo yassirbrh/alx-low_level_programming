@@ -21,7 +21,7 @@ int _atoi(char *s)
 		{
 			j = i;
 			i = 0;
-			while(i < j)
+			while (i < j)
 			{
 				if (*(s + i) == '-')
 				numOfMinus++;
