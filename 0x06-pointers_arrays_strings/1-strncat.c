@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _strncat - Function
  *
@@ -21,11 +20,11 @@ char *_strncat(char *dest, char *src, int n)
 	len_dest++;
 	while (*(src + len_src) != '\0')
 	len_src++;
-	for (i = 0; i <= n; i++)
-	{
-		*(dest + (len_dest + i)) = *(src + i);
-		len_dest++;
-	}
-	*(dest + (len_dest + 1)) = '\0';
+	if (n > len_src) 
+	n = len_src;
+	for (i = 0; i < n; i++)
+	*(dest + (len_dest + i)) = *(src + i);
+	len_dest += i + 1;
+	*(dest + len_dest) = '\0';
 	return (dest);
 }
