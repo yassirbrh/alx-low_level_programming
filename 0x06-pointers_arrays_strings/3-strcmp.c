@@ -29,9 +29,9 @@ int _strcmp(char *s1, char *s2)
 		i++;
 	}
 	if (len_s1 > len_s2)
-	len_comp = 15;
+	len_comp = 1;
 	else if (len_s1 < len_s2)
-	len_comp = -15;
+	len_comp = -1;
 	else
 	{
 		for (i = 0; i <= len_s1; i++)
@@ -40,7 +40,7 @@ int _strcmp(char *s1, char *s2)
 			result = 0;
 			else
 			{
-				result = 15;
+				result = 1;
 				return (result);
 			}
 		}
