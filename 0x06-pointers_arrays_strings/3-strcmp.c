@@ -29,22 +29,18 @@ int _strcmp(char *s1, char *s2)
 		i++;
 	}
 	if (len_s1 > len_s2)
-	len_comp = 1;
-	else if (len_s1 < len_s2)
-	len_comp = -1;
+	len_comp = len_s1;
 	else
+	len_comp = len_s2;
+	for (i = 0; i <= len_comp; i++)
 	{
-		for (i = 0; i <= len_s1; i++)
+		if (*(s1 + i) == *(s2 + i))
+		result = 0;
+		else
 		{
-			if (*(s1 + i) == *(s2 + i))
-			result = 0;
-			else
-			{
-				result = 1;
-				return (result);
-			}
+			result = (int)*(s1 + i) - (int) *(s2 + i);
+			return (result);
 		}
-		return (result);
 	}
-	return (len_comp);
+	return (result);
 }
