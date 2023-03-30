@@ -11,7 +11,7 @@
 char *cap_string(char *str)
 {
 	int i, j;
-	char *separators = ",;!?\"(){}\n\t. "
+	char *separators = ",;!?\"(){}\n\t. ";
 
 	i = 0;
 	while (str[i] != '\0')
