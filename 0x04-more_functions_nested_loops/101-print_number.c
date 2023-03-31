@@ -21,16 +21,16 @@ void print_number(int n)
 	else
 	num = n;
 	num1 = num;
-	while (num > 9)
+	while (num1 > 9)
 	{
-		num /= 10;
+		num1 /= 10;
 		i *= 10;
 	}
 	if (num != 0 && i == 1000000000)
 	_putchar('0' + (num / i) % 10);
 	else
 	i *= 10;
-	if (num >= 0 && num < 10)
+	if (num == 0 || num < 10)
 	_putchar('0' + num);
 	else
 	{
