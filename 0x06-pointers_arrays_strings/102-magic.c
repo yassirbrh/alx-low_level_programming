@@ -1,11 +1,5 @@
 #include <stdio.h>
-/**
- * main - Function
- *
- * Description: getting 98 as result of a[2]
- *
- * Return: 0 Success
- */
+
 int main(void)
 {
 	int n;
