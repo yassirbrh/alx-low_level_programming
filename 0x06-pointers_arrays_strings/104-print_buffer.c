@@ -14,8 +14,6 @@ void print_buffer(char *b, int size)
 	int i, j;
 
 	i = 0;
-	if (size < 1)
-	printf("\n");
 	while (i < size)
 	{
 		if (i % 10 == 0)
@@ -51,4 +49,5 @@ void print_buffer(char *b, int size)
 		}
 		i++;
 	}
+	printf("\n");
 }
