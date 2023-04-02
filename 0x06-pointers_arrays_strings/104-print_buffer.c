@@ -42,7 +42,7 @@ void print_buffer(char *b, int size)
 			printf(" ");
 			for (j = (i / 10) * 10; j <= i; j++)
 			{
-				if ((b[j] >= '\0' && b[j] <= '\7') || b[j] == '\n')
+				if ((b[j] >= '\0' && b[j] <= '\7') || b[j] == '\n' || b[j] == '\t')
 				b[j] = '.';
 				printf("%c", b[j]);
 			}
