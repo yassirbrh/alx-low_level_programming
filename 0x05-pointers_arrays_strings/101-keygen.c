@@ -10,22 +10,10 @@
  */
 int main(void)
 {
-	int i, character;
+	int i;
 
-	srand(time(NULL));
-	character = rand() % 100;
-	if (character < 65)
-	{
-		while (character < 65)
-		character += 65;
-	}
-	else if (character > 123)
-	{
-		while (character > 122)
-		character -= 56;
-	}
-	for (i = 0; i < 2772 / character; i++)
-	printf("%c", character);
-	printf("%c", 2772 % character);
+	for (i = 0; i < 2772 / 65; i++)
+	printf("%c", 65);
+	printf("%c", 2772 % 65);
 	return (0);
 }
