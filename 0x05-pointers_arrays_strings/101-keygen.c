@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 /**
  * main - Entry Point
  *
@@ -10,17 +11,43 @@
  */
 int main(void)
 {
-	int i, character;
+	int i, j, number;
+	char *chs = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	char *password = malloc(strlen(chs) + 1);
 
-	for (i = 90; i < 2772; i++)
+	srand(time(NULL));
+	i = 0;
+	j = 0;
+	number = 2772;
+	while (number != 0)
 	{
-		if (2772 % i == 0)
+		while (number < 0)
 		{
-			character = i;
-			break;
+			if (password[j] - 1 > 47 && password[j] - 1 < 58)
+			{
+				password[j] -= 1;
+				number++;
+			}
+			else if (password[j] - 1 > 64 && password[j] - 1 < 91)
+			{
+				password[j] -= 1;
+				number++;
+			}
+			else if (password[j] - 1 > 96 && password[j] - 1 < 123)
+			{
+				password[j] -= 1;
+				number++;
+			}
+			j++;
+			if (j == i)
+			j = 0;
 		}
+		password[i] = chs[rand() % strlen(chs)];
+		if (number != 0)
+		number -= (int)password[i];
+		i++;
 	}
-	for (i = 0; i < 2772 / character; i++)
-	printf("%c", character);
+	password[i - 1] = '\0';
+	printf("%s", password);
 	return (0);
 }
