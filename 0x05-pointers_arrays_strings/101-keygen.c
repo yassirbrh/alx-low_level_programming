@@ -10,23 +10,17 @@
  */
 int main(void)
 {
-	char *password, rand_char;
-	int i, j;
+	int i, character;
 
-	j = 0;
-	password = malloc(8);
-	while (j < 10)
+	srand(time(NULL));
+	character = rand() % 100;
+	if (character < 65)
 	{
-		i = 0;
-		while (i < 8)
-		{
-			srand(time(NULL) + 1);
-			rand_char = rand() % 256 + 1;
-			*(password + i) =  (char)rand_char;
-			i++;
-		}
-		printf("%s\n", password);
-		j++;
+		while (character < 65)
+		character += 65;
 	}
+	for (i = 0; i < 2772 / character; i++)
+	printf("%c", character);
+	printf("%c", 2772 % character);
 	return (0);
 }
