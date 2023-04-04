@@ -1,3 +1,4 @@
+In order to make the crackme2 executable readable with C language, we used a dissambeling tool to extract C source code, or ltrace command in linux..
 The crackme2 program takes as argument a pointer to an array of environment variables set by OS.
 This pointer is to iterate over this array in order to find a variable called "jennieandjayloveasm=" using the strncmp function.
 If this variable is found, we get its content and we encrypt it using MD5 algorithm, after that we compare the encrypted output with this password "e99a18c428cb38d5f260853678922e03".
