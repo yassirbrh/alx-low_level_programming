@@ -10,10 +10,17 @@
  */
 int main(void)
 {
-	int i;
+	int i, character;
 
-	for (i = 0; i < 2772 / 65; i++)
-	printf("%c", 65);
-	printf("%c", 2772 % 65);
+	for (i = 90; i < 2772; i++)
+	{
+		if (2772 % i == 0)
+		{
+			character = i;
+			break;
+		}
+	}
+	for (i = 0; i < 2772 / character; i++)
+	printf("%c", character);
 	return (0);
 }
