@@ -19,6 +19,11 @@ int main(void)
 		while (character < 65)
 		character += 65;
 	}
+	else if (character > 123)
+	{
+		while (character > 122)
+		character -= 56;
+	}
 	for (i = 0; i < 2772 / character; i++)
 	printf("%c", character);
 	printf("%c", 2772 % character);
