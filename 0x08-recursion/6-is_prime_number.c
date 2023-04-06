@@ -11,6 +11,8 @@
  */
 int divisor(int n, int div)
 {
+	if (n < 2)
+	return (0);
 	if (n % div == 0)
 	return (div);
 	else
