@@ -89,7 +89,7 @@ int strcmp_recursion(char *s, char *p)
  */
 int is_palindrome(char *s)
 {
-	char rev_s[strlen_recursion(s) + 1];
+	char *rev_s = malloc(strlen_recursion(s) + 1);
 
 	strcpy_recursion(rev_s, s);
 	rev_string(s, rev_s, strlen_recursion(s));
