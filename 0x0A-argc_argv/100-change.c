@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 /**
  * main - Entry point
  *
@@ -15,12 +17,21 @@
 int main(int argc, char *argv[])
 {
 	int cents, coins;
+	unsigned int i;
 
-	cents = 0;
+	coins = 0;
 	if (argc != 2)
 	{
-	printf("Error\n");
-	return (1);
+		printf("Error\n");
+		return (1);
+	}
+	for (i = 0; i < strlen(argv[1]); i++)
+	{
+		if (!isdigit(argv[1][i]))
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
 	if (!atoi(argv[1]))
 	{
