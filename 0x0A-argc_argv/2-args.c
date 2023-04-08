@@ -9,7 +9,7 @@
  *
  * Return: 0 Always (Success)
  */
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int i;
 
