@@ -74,6 +74,8 @@ char **strtow(char *str)
 	int i, j, t, tab_size;
 	char **tab;
 
+	if (str == NULL || str == "")
+	return (NULL);
 	tab_size = words_count(str) + 1;
 	tab = malloc(sizeof(char *) * tab_size);
 	if (tab == NULL)
