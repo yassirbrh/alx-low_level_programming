@@ -92,7 +92,7 @@ char **strtow(char *str)
 	int i, j, t, tab_size;
 	char **tab;
 
-	if (str == NULL || _strlen(str) == 0 || str == " ")
+	if (str == NULL || _strlen(str) == 0 || str[0] == " ")
 	return (NULL);
 	tab_size = words_count(str) + 1;
 	tab = malloc(sizeof(char *) * tab_size);
