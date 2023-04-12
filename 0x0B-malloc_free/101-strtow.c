@@ -60,6 +60,24 @@ void allocate_string(char *str, char **tab)
 	}
 }
 /**
+ * _strlen - Function
+ *
+ * Description: Returns the length of a string.
+ *
+ * @str: The pointer to the string.
+ *
+ * Return: The length of the string.
+ */
+int _strlen(char *str)
+{
+	int length;
+
+	length = 0;
+	while (*(str + length) != '\0')
+	length++;
+	return (length);
+}
+/**
  * strtow - Function
  *
  * Description: Splits a string into words.
@@ -74,7 +92,7 @@ char **strtow(char *str)
 	int i, j, t, tab_size;
 	char **tab;
 
-	if (str == NULL || str == "")
+	if (str == NULL || _strlen(str) == 0)
 	return (NULL);
 	tab_size = words_count(str) + 1;
 	tab = malloc(sizeof(char *) * tab_size);
