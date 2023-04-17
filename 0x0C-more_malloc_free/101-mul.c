@@ -62,7 +62,7 @@ char *string_add(char *n1, char *n2)
 	len_res = len_n2 + 1;
 	r = malloc(sizeof(char) * (len_n1 + len_n2 + 2));
 	_memset(r, '0', len_n1 + len_n2);
-	r[len_n1 + len_n2];
+	r[len_n1 + len_n2] = '\0';
 	if (_strlen(n1) == 0 || _strlen(n2) == 0)
 	return (0);
 	buff = 0;
@@ -88,12 +88,12 @@ char *string_add(char *n1, char *n2)
 	reverse(r);
 	return (r);
 }
-void op_org(char *t, char *u, char *arg1, char *arg2, int fp, int sp)
+void op_org(char *t, char *u, char *arg1, char *arg2, int *fp, int *sp)
 {
 	t = arg1;
 	u = arg2;
-	fp = _strlen(t);
-	sp = _strlen(u);
+	*fp = _strlen(t);
+	*sp = _strlen(u);
 }
 void errors(int argc, char *argv[])
 {
@@ -118,9 +118,9 @@ int main(int argc, char *argv[])
 	first_prod = _strlen(argv[1]);
 	sec_prod = _strlen(argv[2]);
 	if (_strlen(argv[1]) < _strlen(argv[2]))
-	op_org(top, under, argv[2], argv[1], first_prod, sec_prod);
+	op_org(top, under, argv[2], argv[1], &first_prod, &sec_prod);
 	_memset(mul_result, '0', _strlen(argv[1]) + _strlen(argv[2]) + 1);
-	mul_result[i] = '\0';
+	/*mul_result[_strlen(argv[1]) + _strlen(argv[2]) + 1] = '\0';*/
 	rem = k = l = m = 0;
 	for (i = sec_prod - 1; i >= 0; i--)
 	{
