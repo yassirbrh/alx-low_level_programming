@@ -88,13 +88,6 @@ char *string_add(char *n1, char *n2)
 	reverse(r);
 	return (r);
 }
-void op_org(char *t, char *u, char *arg1, char *arg2, int *fp, int *sp)
-{
-	t = arg1;
-	u = arg2;
-	*fp = _strlen(t);
-	*sp = _strlen(u);
-}
 void errors(int argc, char *argv[])
 {
 	if (argc != 3 || is_only_digit(argv[1]) == 0 || is_only_digit(argv[2]) == 0)
@@ -103,23 +96,9 @@ void errors(int argc, char *argv[])
 		exit(98);
 	}
 }
-int main(int argc, char *argv[])
+void add_mul(int first_prod, int sec_prod, char *result, char *mul_result)
 {
-	int sec_prod, first_prod, i, j, k, rem, l, m, mul;
-	char *result, *top, *under, *mul_result;
-
-	errors(argc, argv);
-	result = malloc(sizeof(char) * (_strlen(argv[1]) + _strlen(argv[2]) + 2));
-	mul_result = malloc(sizeof(char) * (_strlen(argv[1]) + _strlen(argv[2]) + 2));
-	_memset(result, '0', _strlen(argv[1]) + _strlen(argv[2]) + 1);
-	result[_strlen(argv[1]) + _strlen(argv[2]) + 1] = '\0';
-	top = argv[1];
-	under = argv[2];
-	first_prod = _strlen(argv[1]);
-	sec_prod = _strlen(argv[2]);
-	if (_strlen(argv[1]) < _strlen(argv[2]))
-	op_org(top, under, argv[2], argv[1], &first_prod, &sec_prod);
-	_memset(mul_result, '0', _strlen(argv[1]) + _strlen(argv[2]) + 1);
+	int rem, k, l, m, i, j, mul;
 	rem = k = l = m = 0;
 	for (i = sec_prod - 1; i >= 0; i--)
 	{
@@ -140,6 +119,30 @@ int main(int argc, char *argv[])
 		k++;
 		m++;
 	}
+}
+int main(int argc, char *argv[])
+{
+	int sec_prod, first_prod, i, j, k, rem, l, m, mul;
+	char *result, *top, *under, *mul_result;
+
+	errors(argc, argv);
+	result = malloc(sizeof(char) * (_strlen(argv[1]) + _strlen(argv[2]) + 2));
+	mul_result = malloc(sizeof(char) * (_strlen(argv[1]) + _strlen(argv[2]) + 2));
+	_memset(result, '0', _strlen(argv[1]) + _strlen(argv[2]) + 1);
+	result[_strlen(argv[1]) + _strlen(argv[2]) + 1] = '\0';
+	top = argv[1];
+	under = argv[2];
+	first_prod = _strlen(argv[1]);
+	sec_prod = _strlen(argv[2]);
+	if (_strlen(argv[1]) < _strlen(argv[2]))
+	{
+		top = argv[2];
+		under = argv[1];
+		first_prod = _strlen(argv[2]);
+		sec_prod = _strlen(argv[1]);
+	}
+	_memset(mul_result, '0', _strlen(argv[1]) + _strlen(argv[2]) + 1);
+	add_mul(first_prod, sec_prod, result, mul_result);
 	printf("%s\n", result);
 	free(result);
 	free(mul_result);
