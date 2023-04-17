@@ -99,7 +99,6 @@ void errors(int argc, char *argv[])
         printf("Error\n");
         exit(98);
     }
-
 }
 int main (int argc, char *argv[])
 {
