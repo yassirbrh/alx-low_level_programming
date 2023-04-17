@@ -120,7 +120,6 @@ int main(int argc, char *argv[])
 	if (_strlen(argv[1]) < _strlen(argv[2]))
 	op_org(top, under, argv[2], argv[1], &first_prod, &sec_prod);
 	_memset(mul_result, '0', _strlen(argv[1]) + _strlen(argv[2]) + 1);
-	/*mul_result[_strlen(argv[1]) + _strlen(argv[2]) + 1] = '\0';*/
 	rem = k = l = m = 0;
 	for (i = sec_prod - 1; i >= 0; i--)
 	{
