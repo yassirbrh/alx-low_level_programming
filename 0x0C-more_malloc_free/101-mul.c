@@ -96,7 +96,7 @@ void errors(int argc, char *argv[])
 		exit(98);
 	}
 }
-void add_mul(int first_prod, int sec_prod, char *result, char *mul_result)
+void add_mul(int first_prod, int sec_prod, char *result, char *mul_result, char *top, char *under)
 {
 	int rem, k, l, m, i, j, mul;
 	rem = k = l = m = 0;
@@ -122,7 +122,7 @@ void add_mul(int first_prod, int sec_prod, char *result, char *mul_result)
 }
 int main(int argc, char *argv[])
 {
-	int sec_prod, first_prod, i, j, k, rem, l, m, mul;
+	int sec_prod, first_prod;
 	char *result, *top, *under, *mul_result;
 
 	errors(argc, argv);
@@ -142,7 +142,7 @@ int main(int argc, char *argv[])
 		sec_prod = _strlen(argv[1]);
 	}
 	_memset(mul_result, '0', _strlen(argv[1]) + _strlen(argv[2]) + 1);
-	add_mul(first_prod, sec_prod, result, mul_result);
+	add_mul(first_prod, sec_prod, result, mul_result, top, under);
 	printf("%s\n", result);
 	free(result);
 	free(mul_result);
