@@ -16,7 +16,7 @@ size_t list_len(const list_t *h)
 	head_ptr = (list_t *)h;
 	length = 0;
 
-	while (head_ptr == NULL)
+	while (head_ptr != NULL)
 	{
 		length++;
 		head_ptr = head_ptr->next;
