@@ -1,18 +1,14 @@
 section .data
-	output db 'Hello, Holberton', 10
+	output db 'Hello, Holberton', 10, 0
 
-_start:
-	mov eax, 4 ; write syscall
-	mov ebx, 1 ; stdout file descriptor
-	mov ecx, output ; get the address of output
-	mov edx, 17 ; the length of output
-	int 0x80 ; system call
+section .text
+	global main
+	extern printf
 
-	; exit with status code 0
-	mov eax, 1 ; exit syscall
-	mov ebx, 0 ; status code 0
-	int 0x80 ; system call
-
-global main
 main:
-	jmp _start
+	mov     edi, output
+	xor     eax, eax
+	call    printf
+	mov     eax, 0
+	ret
+
