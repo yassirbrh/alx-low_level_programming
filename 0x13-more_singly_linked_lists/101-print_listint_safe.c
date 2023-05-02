@@ -13,9 +13,9 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	listint_t *node = (listint_t *)head, *tmp_node;
-	int nodes = 0, tmp_nodes;
+	size_t nodes = 0, tmp_nodes;
 
-	if (node == NULL)
+	if (head == NULL)
 		exit(98);
 	while (node != NULL)
 	{
