@@ -10,8 +10,8 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int num = n, b = 0;
-	int bit, i = 0, len = 0;
+	unsigned long int num = n;
+	int len = 0;
 
 	while (num != 0)
 	{
@@ -19,20 +19,14 @@ void print_binary(unsigned long int n)
 		len++;
 	}
 	len--;
-	num = n;
-	while (num != 0)
-	{
-		bit = num - ((num >> 1) * 2);
-		b += bit * (1 << (len - i));
-		num = num >> 1;
-		i++;
-	}
-	for (i = 0; i <= len; i++)
-	{
-		bit = b - ((b >> 1) * 2);
-		b = b >> 1;
-		_putchar(bit + '0');
-	}
 	if (n == 0)
 		_putchar('0');
+	while (len >= 0)
+	{
+		if (((n >> len) & 1) == 1)
+			_putchar('1');
+		else
+			_putchar('0');
+		len--;
+	}
 }
