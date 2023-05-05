@@ -11,19 +11,9 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int num = n;
-	unsigned int len = 0;
 	int bit;
 
-	while (num != 0)
-	{
-		num >>= 1;
-		len++;
-	}
-	if (n == 0)
-		len++;
-	len--;
-	if (index > len)
+	if (index > 8 * sizeof(unsigned long int))
 		return (-1);
 	bit = (n >> index) & 1;
 	return (bit);
