@@ -17,11 +17,9 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *fp;
-	size_t i = 0;
+	ssize_t i = 0;
 	char ch;
 
-	if (filename == NULL)
-		return (0);
 	fp = fopen(filename, "r");
 	if (fp == NULL)
 	{
