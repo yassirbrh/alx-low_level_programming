@@ -20,6 +20,29 @@ int _strlen(char *str)
 	return (i);
 }
 /**
+ * close_error - Function
+ *
+ * Description: Checks if close gets error
+ *
+ * @fp1: The first pointer.
+ * @fp2: The second pointer.
+ *
+ * Return: No return because it's a void function.
+ */
+void close_error(int fp1, int fp2)
+{
+	if (close(fp1) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp1);
+		exit(100);
+	}
+	if (close(fp2) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp2);
+		exit(100);
+	}
+}
+/**
  * main - Entry point
  *
  * Description: Copies the content of a file to another file.
@@ -54,21 +77,17 @@ int main(int argc, char **argv)
 	}
 	do {
 		rd = read(fp1, buffer, sizeof(buffer));
+		if (rd == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
 		if (write(fp2, buffer, rd) == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	} while (rd == sizeof(buffer));
-	if (close(fp1) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp1);
-		exit(100);
-	}
-	if (close(fp2) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp2);
-		exit(100);
-	}
+	close_error(fp1, fp2);
 	return (0);
 }
