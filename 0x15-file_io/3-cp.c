@@ -62,12 +62,12 @@ int main(int argc, char **argv)
 	} while (rd == sizeof(buffer));
 	if (close(fp1) == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %d\n", fp1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp1);
 		exit(100);
 	}
 	if (close(fp2) == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %d\n", fp2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp2);
 		exit(100);
 	}
 	return (0);
