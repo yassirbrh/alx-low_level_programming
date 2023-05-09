@@ -54,7 +54,7 @@ void close_error(int fp1, int fp2)
  */
 int main(int argc, char **argv)
 {
-	int fp1, fp2, flags = O_CREAT | O_RDONLY;
+	int fp1, fp2, flags = O_RDONLY;
 	int flags2 = O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, rd;
 	char *buffer = malloc(1024);
 
