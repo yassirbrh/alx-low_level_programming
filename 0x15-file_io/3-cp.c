@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 	}
 	do {
 		rd = read(fp1, buffer, sizeof(buffer));
-		if (write(fp2, buffer, rd) == 0)
+		if (write(fp2, buffer, rd) == -1)
 		{
 			dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
