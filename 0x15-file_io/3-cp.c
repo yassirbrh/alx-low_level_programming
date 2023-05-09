@@ -72,7 +72,7 @@ int main(int argc, char **argv)
 	fp2 = open(argv[2], flags2, 0664);
 	if (fp2 == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	do {
