@@ -24,8 +24,8 @@ int _strlen(char *str)
  *
  * Description: Checks if close gets error
  *
- * @fp1: The first pointer.
- * @fp2: The second pointer.
+ * @fp1: The first file descriptor.
+ * @fp2: The second file descriptor.
  *
  * Return: No return because it's a void function.
  */
