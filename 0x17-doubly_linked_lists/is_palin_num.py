@@ -14,7 +14,7 @@ sec_num = 0
 prod = 0
 for i in range(100, 1000):
     for j in range(100, 1000):
-        if is_palin_num(i * j):
+        if is_palin_num(i * j) and i * j > prod:
             first_num = i
             sec_num = j
             prod = i * j
