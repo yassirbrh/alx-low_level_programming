@@ -1,4 +1,7 @@
 m.h
 a.out
-main*
-school*
+main.o
+main.c
+school.o
+school
+school.c
